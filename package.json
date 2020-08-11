@@ -1,0 +1,19 @@
+{
+  "name": "data-mining",
+  "version": "0.0.1",
+  "description": "Data mining helpers and utilities for Node JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tewen/data-mining.git"
+  },
+  "author": "Trevor Ewen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tewen/data-mining/issues"
+  },
+  "homepage": "https://github.com/tewen/data-mining#readme"
+}
