@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tewen/data-mining.git"
+    "url": "git+https://github.com/tewen/data-mining-tools.git"
   },
   "author": "Trevor Ewen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tewen/data-mining/issues"
+    "url": "https://github.com/tewen/data-mining-tools/issues"
   },
-  "homepage": "https://github.com/tewen/data-mining#readme"
+  "homepage": "https://github.com/tewen/data-mining-tools#readme"
 }
