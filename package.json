@@ -1,5 +1,5 @@
 {
-  "name": "data-mining",
+  "name": "data-mining-tools",
   "version": "0.0.1",
   "description": "Data mining helpers and utilities for Node JS.",
   "main": "index.js",
