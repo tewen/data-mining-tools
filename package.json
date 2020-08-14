@@ -5,7 +5,7 @@
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/YOUR_GITHUB_USER_NAME/data-mining-tools",
+  "repository": "https://github.com/tewen/data-mining-tools",
   "license": "MIT",
   "keywords": [],
   "scripts": {
@@ -50,8 +50,7 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "fs-extra": "^9.0.1",
-    "sha.js": "^2.4.11"
+    "fs-extra": "^9.0.1"
   },
   "devDependencies": {
     "@bitjson/npm-scripts-info": "^1.0.0",

@@ -1,7 +1,2 @@
-import * as file from './lib/file';
-import * as time from './lib/time';
-
-export default {
-  file,
-  time
-};
+export * from './lib/file';
+export * from './lib/time';
