@@ -3,7 +3,7 @@ import test from 'ava';
 import { domainAndSuffixFromUrl } from './url';
 
 test('returns a blank string when passed undefined', t => {
-    t.is(domainAndSuffixFromUrl(undefined), '');
+  t.is(domainAndSuffixFromUrl(undefined), '');
 });
 
 test('returns a blank string when passed null', t => {
@@ -35,15 +35,24 @@ test('returns the domain and suffix when passed a domain and suffix', t => {
 });
 
 test('returns the domain and suffix when passed an http:// subdomain and suffix', t => {
-  t.is(domainAndSuffixFromUrl('http://admin.tunaipsum.com'), 'admin.tunaipsum.com');
+  t.is(
+    domainAndSuffixFromUrl('http://admin.tunaipsum.com'),
+    'admin.tunaipsum.com'
+  );
 });
 
 test('returns the domain and suffix when passed an https:// subdomain and suffix', t => {
-  t.is(domainAndSuffixFromUrl('https://admin.tunaipsum.com'), 'admin.tunaipsum.com');
+  t.is(
+    domainAndSuffixFromUrl('https://admin.tunaipsum.com'),
+    'admin.tunaipsum.com'
+  );
 });
 
 test('returns the domain and suffix when passed an http://wwww subdomain and suffix', t => {
-  t.is(domainAndSuffixFromUrl('http://www.admin.tunaipsum.com'), 'admin.tunaipsum.com');
+  t.is(
+    domainAndSuffixFromUrl('http://www.admin.tunaipsum.com'),
+    'admin.tunaipsum.com'
+  );
 });
 
 test('returns the domain and suffix when passed a subdomain and suffix', t => {
