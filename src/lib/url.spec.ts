@@ -77,6 +77,11 @@ test('returns undefined when passed an invalid url string', t => {
   t.is(cleanUrl('invalid url'), undefined);
 });
 
+test('returns undefined when passed an invalid url string with extra spaces', t => {
+  t.is(cleanUrl(' hey friend '), undefined);
+  t.is(cleanUrl('http:// hey friend'), undefined);
+});
+
 test('returns a url with http when passed one without http', t => {
   t.is(cleanUrl('motorhead.org'), 'http://motorhead.org');
 });

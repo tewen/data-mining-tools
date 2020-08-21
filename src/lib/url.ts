@@ -18,6 +18,7 @@ export function cleanUrl(url: string): string {
         : `http://${url}`
       ).trim();
       const { hostname } = new URL(prefixed);
+      /* istanbul ignore else */
       if (hostname) {
         return prefixed;
       }
