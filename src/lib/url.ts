@@ -9,3 +9,21 @@ export function domainAndSuffixFromUrl(url: string): string {
     return typeof url === 'string' ? url.replace(/^www\./i, '') : '';
   }
 }
+
+export function cleanUrl(url: string): string {
+  try {
+    if (url && typeof url === 'string') {
+      const prefixed: string = (/^(http|https):\/\//i.test(url)
+        ? url
+        : `http://${url}`
+      ).trim();
+      const { hostname } = new URL(prefixed);
+      if (hostname) {
+        return prefixed;
+      }
+    }
+    return undefined;
+  } catch (e) {
+    return undefined;
+  }
+}
