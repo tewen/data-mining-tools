@@ -1,28 +1,31 @@
 // tslint:disable:no-expression-statement
-import test from 'ava';
+import { expect } from 'chai';
 import { cleanText } from './text';
 
-// cleanText
-test('returns undefined if passed undefined', t => {
-  t.is(cleanText(undefined), undefined);
-});
+describe('text', () => {
+  describe('cleanText()', () => {
+    it('returns undefined if passed undefined', () => {
+      expect(cleanText(undefined)).to.equal(undefined);
+    });
 
-test('returns undefined when passed null', t => {
-  t.is(cleanText(null), undefined);
-});
+    it('returns undefined when passed null', () => {
+      expect(cleanText(null)).to.equal(undefined);
+    });
 
-test('returns a blank string if passed a blank string', t => {
-  t.is(cleanText(''), '');
-});
+    it('returns a blank string if passed a blank string', () => {
+      expect(cleanText('')).to.equal('');
+    });
 
-test('trims an empty string', t => {
-  t.is(cleanText('   '), '');
-});
+    it('trims an empty string', () => {
+      expect(cleanText('   ')).to.equal('');
+    });
 
-test('trims a string', t => {
-  t.is(cleanText(' My string. '), 'My string.');
-});
+    it('trims a string', () => {
+      expect(cleanText(' My string. ')).to.equal('My string.');
+    });
 
-test('removes newlines', t => {
-  t.is(cleanText('Red \nGreen \rBlue \n'), 'Red Green Blue');
+    it('removes newlines', () => {
+      expect(cleanText('Red \nGreen \rBlue \n')).to.equal('Red Green Blue');
+    });
+  });
 });
