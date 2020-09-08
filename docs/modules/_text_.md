@@ -14,7 +14,7 @@
 
 ▸ **cleanText**(`text`: string): *string*
 
-*Defined in [text.ts:1](https://github.com/tewen/data-mining-tools/blob/2c01072/src/lib/text.ts#L1)*
+*Defined in [text.ts:1](https://github.com/tewen/data-mining-tools/blob/9a5675d/src/lib/text.ts#L1)*
 
 **Parameters:**
 
