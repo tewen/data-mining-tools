@@ -19,5 +19,7 @@ export async function renderDynamicPage(
   const browserPage = await browser.newPage();
   await browserPage.setUserAgent(userAgent);
   const response = await browserPage.goto(url);
-  return response.text();
+  const html = await response.text();
+  await browser.close();
+  return html;
 }
