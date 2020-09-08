@@ -14,7 +14,7 @@
 
 ▸ **filesExist**(...`files`: ReadonlyArray‹string›): *Promise‹boolean›*
 
-*Defined in [file.ts:3](https://github.com/tewen/data-mining-tools/blob/9a5675d/src/lib/file.ts#L3)*
+*Defined in [file.ts:3](https://github.com/tewen/data-mining-tools/blob/e69be96/src/lib/file.ts#L3)*
 
 **Parameters:**
 

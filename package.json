@@ -1,6 +1,6 @@
 {
   "name": "data-mining-tools",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Data mining helpers and utilities for Node JS.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -30,7 +30,7 @@
     "major-version": "standard-version --release-as major",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "clean": "trash build test",
-    "prepare-release": "run-s reset test cov:check doc minor-version"
+    "prepare-release": "run-s reset test cov:check doc version"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
