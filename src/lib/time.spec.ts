@@ -10,6 +10,10 @@ describe('time', () => {
   });
 
   describe('randomTimeout()', () => {
+    it('should default the minimum to 1000 and the maximum to 10000', async () => {
+      expect(await randomTimeout()).to.be.undefined;
+    });
+
     it('should resolve in a range between the min and max count', async () => {
       expect(await randomTimeout(1, 9)).to.be.undefined;
     });
