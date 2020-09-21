@@ -30,7 +30,7 @@
     "major-version": "standard-version --release-as major",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "clean": "trash build test",
-    "prepare-release": "run-s reset test cov:check doc version"
+    "prepare-release": "run-s reset test cov:check doc minor-version"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "deep-cuts": "^1.7.0",
+    "fast-csv": "^4.3.2",
     "fs-extra": "^9.0.1",
     "puppeteer-extra": "^3.1.15",
     "puppeteer-extra-plugin-stealth": "^2.6.1"
@@ -79,7 +80,7 @@
     "standard-version": "^6.0.1",
     "trash-cli": "^3.0.0",
     "ts-node": "^9.0.0",
-    "tslint": "^5.18.0",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
     "typedoc": "^0.18.0",

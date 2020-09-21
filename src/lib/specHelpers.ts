@@ -19,6 +19,33 @@ export async function createTemporaryFiles(
   }
 }
 
+export async function createJsonFile(
+  filepath: string,
+  jsonObject: object
+): Promise<string> {
+  await fs.mkdirp(path.dirname(filepath));
+  await fs.writeFile(filepath, JSON.stringify(jsonObject, null, 2));
+  return filepath;
+}
+
+export async function createTemporaryJsonFiles(
+  jsonObjects: ReadonlyArray<object>,
+  files: ReadonlyArray<string> = []
+): Promise<ReadonlyArray<string>> {
+  if (jsonObjects.length) {
+    const jsonObject: object = jsonObjects[0];
+    const count: number = files.length + 1;
+    const filepath: string = path.join(TEMP_FILES_DIRECTORY, `${count}.json`);
+    await createJsonFile(filepath, jsonObject);
+    return createTemporaryJsonFiles(
+      jsonObjects.slice(1),
+      files.concat(filepath)
+    );
+  } else {
+    return files;
+  }
+}
+
 export async function cleanupFiles(...args): Promise<any> {
   await timeout(150);
   return Promise.all(args.map(file => fs.remove(file)));
