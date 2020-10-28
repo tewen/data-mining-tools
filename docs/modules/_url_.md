@@ -18,7 +18,7 @@
 
 ▸ **cleanUrl**(`url`: string): *string*
 
-*Defined in [url.ts:44](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/url.ts#L44)*
+*Defined in [url.ts:44](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/url.ts#L44)*
 
 **Parameters:**
 
@@ -34,7 +34,7 @@ ___
 
 ▸ **domainAndSuffixFromUrl**(`url`: string): *string*
 
-*Defined in [url.ts:34](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/url.ts#L34)*
+*Defined in [url.ts:34](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/url.ts#L34)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ ___
 
 ▸ **isLiveUrl**(`url`: string, `__namedParameters`: object): *Promise‹boolean›*
 
-*Defined in [url.ts:63](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/url.ts#L63)*
+*Defined in [url.ts:63](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/url.ts#L63)*
 
 **Parameters:**
 
@@ -60,6 +60,7 @@ ___
 
 Name | Type | Default |
 ------ | ------ | ------ |
+`parkingPageCheck` | boolean | true |
 `timeout` | number | 10000 |
 
 **Returns:** *Promise‹boolean›*
@@ -70,7 +71,7 @@ ___
 
 ▸ **isParkingPage**(`url`: string): *Promise‹boolean›*
 
-*Defined in [url.ts:9](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/url.ts#L9)*
+*Defined in [url.ts:9](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/url.ts#L9)*
 
 **Parameters:**
 
@@ -86,7 +87,7 @@ ___
 
 ▸ **isSuccess**(`status`: number): *boolean*
 
-*Defined in [url.ts:7](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/url.ts#L7)*
+*Defined in [url.ts:7](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/url.ts#L7)*
 
 **Parameters:**
 

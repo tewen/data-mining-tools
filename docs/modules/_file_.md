@@ -17,7 +17,7 @@
 
 ▸ **csvFileToJsonArray**(`filepath`: string): *Promise‹Array‹object››*
 
-*Defined in [file.ts:111](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/file.ts#L111)*
+*Defined in [file.ts:111](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/file.ts#L111)*
 
 **Parameters:**
 
@@ -33,7 +33,7 @@ ___
 
 ▸ **filesAsJson**(`fileOrDirectoryPath`: string): *Promise‹object›*
 
-*Defined in [file.ts:23](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/file.ts#L23)*
+*Defined in [file.ts:23](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/file.ts#L23)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **filesExist**(...`files`: ReadonlyArray‹string›): *Promise‹boolean›*
 
-*Defined in [file.ts:6](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/file.ts#L6)*
+*Defined in [file.ts:6](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/file.ts#L6)*
 
 **Parameters:**
 
@@ -65,7 +65,7 @@ ___
 
 ▸ **jsonArrayToCsvFile**(`filepath`: string, `ar`: Array‹object›, `headerOrdering`: Array‹string›): *Promise‹string›*
 
-*Defined in [file.ts:56](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/file.ts#L56)*
+*Defined in [file.ts:56](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/file.ts#L56)*
 
 **Parameters:**
 

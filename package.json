@@ -29,7 +29,7 @@
     "minor-version": "standard-version --release-as minor",
     "major-version": "standard-version --release-as major",
     "reset": "git clean -dfx && git reset --hard && npm i",
-    "clean": "trash build test",
+    "clean": "rm -rf build && rm -rf test",
     "prepare-release": "run-s reset test cov:check doc minor-version"
   },
   "scripts-info": {
