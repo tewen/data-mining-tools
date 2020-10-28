@@ -34,7 +34,7 @@
 
 \+ **new FileStore**(`file`: string, `defaultContent`: object): *[FileStore](_filestore_.filestore.md)*
 
-*Defined in [fileStore.ts:21](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L21)*
+*Defined in [fileStore.ts:21](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L21)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ Name | Type |
 
 • **defaultContent**: *object*
 
-*Defined in [fileStore.ts:21](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L21)*
+*Defined in [fileStore.ts:21](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L21)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **encoding**: *string* = "utf-8"
 
-*Defined in [fileStore.ts:20](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L20)*
+*Defined in [fileStore.ts:20](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L20)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **file**: *string*
 
-*Defined in [fileStore.ts:19](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L19)*
+*Defined in [fileStore.ts:19](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L19)*
 
 ## Methods
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **read**(): *Promise‹object›*
 
-*Defined in [fileStore.ts:28](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L28)*
+*Defined in [fileStore.ts:28](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L28)*
 
 **Returns:** *Promise‹object›*
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **write**(`content`: object): *Promise‹object›*
 
-*Defined in [fileStore.ts:38](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L38)*
+*Defined in [fileStore.ts:38](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L38)*
 
 **Parameters:**
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **readOrCreateFile**(`file`: string, `encoding`: string, `contents`: string): *Promise‹string›*
 
-*Defined in [fileStore.ts:7](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/fileStore.ts#L7)*
+*Defined in [fileStore.ts:7](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L7)*
 
 **Parameters:**
 

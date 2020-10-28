@@ -15,7 +15,7 @@
 
 ▸ **randomTimeout**(`min`: number, `max`: number): *Promise‹any›*
 
-*Defined in [time.ts:5](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/time.ts#L5)*
+*Defined in [time.ts:5](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/time.ts#L5)*
 
 **Parameters:**
 
@@ -32,7 +32,7 @@ ___
 
 ▸ **timeout**(`count`: number): *Promise‹any›*
 
-*Defined in [time.ts:1](https://github.com/tewen/data-mining-tools/blob/c57f385/src/lib/time.ts#L1)*
+*Defined in [time.ts:1](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/time.ts#L1)*
 
 **Parameters:**
 

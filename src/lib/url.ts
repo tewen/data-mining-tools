@@ -62,7 +62,7 @@ export function cleanUrl(url: string): string {
 
 export async function isLiveUrl(
   url: string,
-  { timeout = 10000 } = {}
+  { timeout = 10000, parkingPageCheck = true } = {}
 ): Promise<boolean> {
   const cleaned: string = cleanUrl(url);
   if (cleaned) {
@@ -76,7 +76,10 @@ export async function isLiveUrl(
     );
     if (!error && response) {
       const { status } = response;
-      return isSuccess(status) && !(await isParkingPage(cleaned));
+      return (
+        isSuccess(status) &&
+        (!parkingPageCheck || !(await isParkingPage(cleaned)))
+      );
     }
   }
   return false;
