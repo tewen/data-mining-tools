@@ -1,10 +1,17 @@
 /* tslint:disable:array-type readonly-array */
 import axios, { CancelTokenSource } from 'axios';
+import cheerio from 'cheerio';
 import { escapeForRegExp, tryCatch } from 'deep-cuts';
 import { URL } from 'url';
 import { renderDynamicPage } from './render';
 
 const isSuccess = (status: number): boolean => status < 400;
+
+function isStaticErrorPage(html:string):boolean {
+  const $ = cheerio.load(html);
+  const title:string = $('title').text();
+  return /not\sfound/i.test(title) || /internal\sserver\serror/i.test(title);
+}
 
 async function isParkingPage(url: string): Promise<boolean> {
   /* tslint:disable:no-console */
@@ -75,9 +82,9 @@ export async function isLiveUrl(
       axios.get(cleaned, { cancelToken: requestCancelToken.token })
     );
     if (!error && response) {
-      const { status } = response;
+      const { status, data } = response;
       return (
-        isSuccess(status) &&
+        isSuccess(status) && !isStaticErrorPage(data) &&
         (!parkingPageCheck || !(await isParkingPage(cleaned)))
       );
     }
