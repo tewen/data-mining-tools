@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/tewen/data-mining-tools/compare/v0.7.0...v0.8.0) (2020-11-15)
+
+
+
 ## [0.7.0](https://github.com/tewen/data-mining-tools/compare/v0.6.0...v0.7.0) (2020-10-28)
 
 
