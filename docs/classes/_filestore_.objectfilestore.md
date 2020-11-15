@@ -35,7 +35,7 @@
 
 *Overrides [FileStore](_filestore_.filestore.md).[constructor](_filestore_.filestore.md#constructor)*
 
-*Defined in [fileStore.ts:44](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L44)*
+*Defined in [fileStore.ts:44](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L44)*
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ Name | Type | Default |
 
 *Inherited from [FileStore](_filestore_.filestore.md).[defaultContent](_filestore_.filestore.md#readonly-defaultcontent)*
 
-*Defined in [fileStore.ts:21](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L21)*
+*Defined in [fileStore.ts:21](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L21)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 *Inherited from [FileStore](_filestore_.filestore.md).[encoding](_filestore_.filestore.md#readonly-encoding)*
 
-*Defined in [fileStore.ts:20](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L20)*
+*Defined in [fileStore.ts:20](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L20)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 *Inherited from [FileStore](_filestore_.filestore.md).[file](_filestore_.filestore.md#readonly-file)*
 
-*Defined in [fileStore.ts:19](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L19)*
+*Defined in [fileStore.ts:19](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L19)*
 
 ## Methods
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **merge**(...`args`: any[]): *Promise‹object›*
 
-*Defined in [fileStore.ts:49](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L49)*
+*Defined in [fileStore.ts:49](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L49)*
 
 **Parameters:**
 
@@ -100,7 +100,7 @@ ___
 
 *Inherited from [FileStore](_filestore_.filestore.md).[read](_filestore_.filestore.md#read)*
 
-*Defined in [fileStore.ts:28](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L28)*
+*Defined in [fileStore.ts:28](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L28)*
 
 **Returns:** *Promise‹object›*
 
@@ -112,7 +112,7 @@ ___
 
 *Inherited from [FileStore](_filestore_.filestore.md).[write](_filestore_.filestore.md#write)*
 
-*Defined in [fileStore.ts:38](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L38)*
+*Defined in [fileStore.ts:38](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L38)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 *Inherited from [FileStore](_filestore_.filestore.md).[readOrCreateFile](_filestore_.filestore.md#static-readorcreatefile)*
 
-*Defined in [fileStore.ts:7](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/fileStore.ts#L7)*
+*Defined in [fileStore.ts:7](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/fileStore.ts#L7)*
 
 **Parameters:**
 

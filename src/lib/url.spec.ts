@@ -221,6 +221,15 @@ describe('url', () => {
       await testUrlSet(invalidUrls, false);
     });
 
+    // STATIC ERROR PAGE
+    const staticErrorPageUrls = JSON.parse(
+      fs.readFileSync('./fixtures/staticErrorPageUrls.json')
+    );
+
+    it('should return false for the static error page url set', async () => {
+      await testUrlSet(staticErrorPageUrls, false);
+    });
+
     // PARKING PAGE
     const parkingPageUrls = JSON.parse(
       fs.readFileSync('./fixtures/parkingPageUrls.json')

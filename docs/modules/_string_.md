@@ -14,7 +14,7 @@
 
 ▸ **cleanFilename**(`filename`: string, `slashReplacement`: string): *string*
 
-*Defined in [string.ts:1](https://github.com/tewen/data-mining-tools/blob/ff6565d/src/lib/string.ts#L1)*
+*Defined in [string.ts:1](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/string.ts#L1)*
 
 **Parameters:**
 

@@ -48,6 +48,7 @@
     "node": ">=8.9"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "deep-cuts": "^1.7.0",
     "fast-csv": "^4.3.2",
     "fs-extra": "^9.0.1",
