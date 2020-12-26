@@ -7,9 +7,9 @@ import { renderDynamicPage } from './render';
 
 const isSuccess = (status: number): boolean => status < 400;
 
-function isStaticErrorPage(html:string):boolean {
+function isStaticErrorPage(html: string): boolean {
   const $ = cheerio.load(html);
-  const title:string = $('title').text();
+  const title: string = $('title').text();
   return /not\sfound/i.test(title) || /internal\sserver\serror/i.test(title);
 }
 
@@ -84,7 +84,8 @@ export async function isLiveUrl(
     if (!error && response) {
       const { status, data } = response;
       return (
-        isSuccess(status) && !isStaticErrorPage(data) &&
+        isSuccess(status) &&
+        !isStaticErrorPage(data) &&
         (!parkingPageCheck || !(await isParkingPage(cleaned)))
       );
     }
