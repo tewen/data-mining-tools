@@ -16,6 +16,7 @@ import {
   createTemporaryJsonFiles,
   TEMP_FILES_DIRECTORY
 } from './specHelpers';
+import { timeout } from './time';
 
 describe('file', () => {
   describe('filesExist()', () => {
@@ -167,6 +168,65 @@ describe('file', () => {
         { country: 'England' }
       ]);
       await cleanupFiles(...files.concat(deeperFile));
+    });
+
+    it('should be able to filter files based on the regular expression passed in', async () => {
+      const files = await createTemporaryJsonFiles([
+        { name: 'Lemmy' },
+        { last: 'Kilmister' },
+        {
+          job: 'Rock & Roll',
+          hobbies: ['WWII', 'Cognac', 'Literature']
+        }
+      ]);
+      const result = await filesAsJson(TEMP_FILES_DIRECTORY, /(1|3)\.json/gi);
+      expect(result).to.eql({
+        name: 'Lemmy',
+        job: 'Rock & Roll',
+        hobbies: ['WWII', 'Cognac', 'Literature']
+      });
+      await cleanupFiles(...files);
+    });
+
+    it('should be able to filter files based on the sync filter function passed in', async () => {
+      const files = await createTemporaryJsonFiles([
+        { name: 'Lemmy' },
+        { last: 'Kilmister' },
+        {
+          job: 'Rock & Roll',
+          hobbies: ['WWII', 'Cognac', 'Literature']
+        }
+      ]);
+      const result = await filesAsJson(
+        TEMP_FILES_DIRECTORY,
+        // @ts-ignore
+        filename => filename.indexOf('1') !== -1
+      );
+      expect(result).to.eql({
+        name: 'Lemmy'
+      });
+      await cleanupFiles(...files);
+    });
+
+    it('should be able to filter files based on the async filter function passed in', async () => {
+      const files = await createTemporaryJsonFiles([
+        { name: 'Lemmy' },
+        { last: 'Kilmister' },
+        {
+          job: 'Rock & Roll',
+          hobbies: ['WWII', 'Cognac', 'Literature']
+        }
+      ]);
+      const result = await filesAsJson(TEMP_FILES_DIRECTORY, async filename => {
+        await timeout(1);
+        return /(2|3)\.json/gi.test(filename);
+      });
+      expect(result).to.eql({
+        last: 'Kilmister',
+        job: 'Rock & Roll',
+        hobbies: ['WWII', 'Cognac', 'Literature']
+      });
+      await cleanupFiles(...files);
     });
   });
 

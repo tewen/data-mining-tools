@@ -21,7 +21,8 @@ export async function filesExist(
 }
 
 export async function filesAsJson(
-  fileOrDirectoryPath: string
+  fileOrDirectoryPath: string,
+  filter: ((filename: string) => Promise<boolean>) | RegExp = null
 ): Promise<object> {
   const lstat = await fs.lstat(fileOrDirectoryPath);
   if (lstat.isDirectory()) {
@@ -30,7 +31,7 @@ export async function filesAsJson(
       const fileContents = await Promise.all(
         files.map(file => {
           const filepath = path.join(fileOrDirectoryPath, file);
-          return filesAsJson(filepath);
+          return filesAsJson(filepath, filter);
         })
       );
       return fileContents.reduce((acc, content) => {
@@ -49,7 +50,16 @@ export async function filesAsJson(
       return null;
     }
   } else {
-    return safeJsonParse(await fs.readFile(fileOrDirectoryPath, 'utf-8'));
+    if (
+      !filter ||
+      (filter instanceof RegExp
+        ? filter.test(fileOrDirectoryPath)
+        : await filter(fileOrDirectoryPath))
+    ) {
+      return safeJsonParse(await fs.readFile(fileOrDirectoryPath, 'utf-8'));
+    } else {
+      return null;
+    }
   }
 }
 
