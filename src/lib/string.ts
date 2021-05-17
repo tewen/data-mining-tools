@@ -1,6 +1,16 @@
 export function cleanFilename(
-  filename: string,
+  filename: string | number | Date,
   slashReplacement: string = '_'
 ): string {
-  return (filename || '').replace(/(\/|\\)/gi, slashReplacement).trim();
+  return (() => {
+    if (filename === undefined || filename === null || Number.isNaN(filename)) {
+      return '';
+    } else if (filename instanceof Date) {
+      return filename.toLocaleString();
+    } else {
+      return String(filename);
+    }
+  })()
+    .replace(/(\/|\\)/gi, slashReplacement)
+    .trim();
 }
