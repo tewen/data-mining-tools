@@ -1,6 +1,8 @@
 import { renderDynamicPage } from '../';
 
-describe('render', () => {
+describe.skip('render', () => {
+  jest.setTimeout(15000);
+
   describe('renderDynamicPage()', () => {
     it('should fail with an error for an invalid url', async () => {
       try {
@@ -14,7 +16,7 @@ describe('render', () => {
       }
     });
 
-    it.skip('should return the full html source', async () => {
+    it('should return the full html source', async () => {
       const html = await renderDynamicPage('http://southportventures.com');
       expect(html).toContain('<html');
       expect(html).toContain('</html>');

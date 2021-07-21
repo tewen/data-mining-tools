@@ -5,6 +5,8 @@ import { cleanupFiles, TEMP_FILES_DIRECTORY } from './specHelpers';
 
 // Generic FileStore
 describe('fileStore', () => {
+  jest.setTimeout(15000);
+
   describe('FileStore()', () => {
     describe('read()', () => {
       it('should create the file with the default contents provided to the constructor', async () => {

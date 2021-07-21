@@ -1,6 +1,6 @@
 {
   "name": "data-mining-tools",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Data mining helpers and utilities for Node JS.",
   "author": "Trevor Ewen",
   "license": "MIT",
@@ -18,6 +18,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
+    "test-watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "lint-fix": "tsdx lint --fix",
     "prepare": "tsdx build",
@@ -48,8 +49,10 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
     "deep-cuts": "^1.7.0",
+    "diacritic": "^0.0.2",
     "fast-csv": "^4.3.2",
     "fs-extra": "^10.0.0",
+    "parse-full-name": "^1.2.5",
     "puppeteer-extra": "^3.1.15",
     "puppeteer-extra-plugin-stealth": "^2.6.1"
   },

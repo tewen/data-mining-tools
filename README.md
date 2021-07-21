@@ -22,6 +22,8 @@ It may make more sense to break it into separate modules in the future, but we l
 
 #### Functional
 * [file](docs/FILE.md)
+* [number](docs/NUMBER.md)
+* [properNoun](docs/PROPER_NOUN.md)  
 * [render](docs/RENDER.md)
 * [text](docs/TEXT.md)
 * [time](docs/TIME.md)
