@@ -1,19 +1,15 @@
 # Module: "time"
 
-## Index
-
 ### Functions
 
-* [randomTimeout](_time_.md#randomtimeout)
-* [timeout](_time_.md#timeout)
+* randomTimeout
+* timeout
 
 ## Functions
 
 ###  randomTimeout
 
 ▸ **randomTimeout**(`min`: number, `max`: number): *Promise‹any›*
-
-*Defined in [time.ts:5](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/time.ts#L5)*
 
 **Parameters:**
 
@@ -29,8 +25,6 @@ ___
 ###  timeout
 
 ▸ **timeout**(`count`: number): *Promise‹any›*
-
-*Defined in [time.ts:1](https://github.com/tewen/data-mining-tools/blob/58f19c9/src/lib/time.ts#L1)*
 
 **Parameters:**
 

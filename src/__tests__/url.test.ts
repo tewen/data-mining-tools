@@ -1,7 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { renderDynamicPage } from '../';
-import { cleanUrl, domainAndSuffixFromUrl, isLiveUrl } from '../';
+import {
+  cleanUrl,
+  domainAndSuffixFromUrl,
+  isLiveUrl,
+  renderDynamicPage,
+} from '../';
 
 describe('url', () => {
   describe('domainAndSuffixFromUrl()', () => {
@@ -151,7 +155,7 @@ describe('url', () => {
     });
   });
 
-  describe('isLiveUrl()', () => {
+  describe.skip('isLiveUrl()', () => {
     it('should return false when passed undefined', async () => {
       // @ts-ignore
       expect(await isLiveUrl(undefined)).toBe(false);
@@ -213,7 +217,8 @@ describe('url', () => {
     );
 
     // TODO - Something failed here during the migration.
-    it.skip('should return true for the valid url set', async () => {
+    it('should return true for the valid url set', async () => {
+      jest.setTimeout(15000);
       await testUrlSet(validUrls, true);
     });
 
@@ -223,6 +228,7 @@ describe('url', () => {
     );
 
     it('should return false for the invalid url set', async () => {
+      jest.setTimeout(15000);
       await testUrlSet(invalidUrls, false);
     });
 
@@ -247,11 +253,11 @@ describe('url', () => {
     );
 
     // NOTE - This test is still failing for some issues related to fakeUrl.com connection
-    it.skip('should return false for the parking page url set', async () => {
+    it('should return false for the parking page url set', async () => {
       await testUrlSet(parkingPageUrls, false);
     });
 
-    it.skip('should return true for parking pages if the check is skipped in the options', async () => {
+    it('should return true for parking pages if the check is skipped in the options', async () => {
       await testUrlSet(parkingPageUrls, true, { parkingPageCheck: false });
     });
   });

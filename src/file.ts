@@ -3,6 +3,23 @@ import { parse } from 'fast-csv';
 import path from 'path';
 import { csvRowsToObjects, objectsToCsvRows, safeJsonParse } from 'deep-cuts';
 
+export function cleanFilename(
+  filename: string | number | Date,
+  slashReplacement: string = '_'
+): string {
+  return (() => {
+    if (filename === undefined || filename === null || Number.isNaN(filename)) {
+      return '';
+    } else if (filename instanceof Date) {
+      return filename.toLocaleString();
+    } else {
+      return String(filename);
+    }
+  })()
+    .replace(/(\/|\\)/gi, slashReplacement)
+    .trim();
+}
+
 export async function filesExist(...files: string[]): Promise<boolean> {
   // @ts-ignore
   const allExist: ReadonlyArray<boolean> = await Promise.all(
