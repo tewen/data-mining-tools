@@ -3,6 +3,8 @@
 ### Functions
 
 * cleanText
+* cleanDiacritics
+* cleanGaps
 
 ## Functions
 
@@ -21,6 +23,18 @@ Name | Type |
 ###  cleanDiacritics
 
 ▸ **cleanDiacritics**(`text`: string): *string*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`text` | string |
+
+**Returns:** *string*
+
+###  cleanGaps
+
+▸ **cleanGaps**(`text`: string): *string*
 
 **Parameters:**
 
