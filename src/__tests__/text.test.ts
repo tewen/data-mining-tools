@@ -1,4 +1,4 @@
-import { cleanText, cleanDiacritics } from '../';
+import { cleanText, cleanDiacritics, cleanGaps } from '../';
 
 describe('text', () => {
   describe('cleanText()', () => {
@@ -57,6 +57,40 @@ describe('text', () => {
 
     it('should should play nice with utf8 diacritics', () => {
       expect(cleanDiacritics('Lukáš BÜttne')).toBe('Lukas BUttne');
+    });
+  });
+
+  describe('cleanGaps()', () => {
+    it('should return an empty string when passed undefined', () => {
+      // @ts-ignore
+      expect(cleanGaps(undefined)).toBe('');
+    });
+
+    it('should return an empty string when passed null', () => {
+      // @ts-ignore
+      expect(cleanGaps(null)).toBe('');
+    });
+
+    it('should return an empty string when passed an empty string', () => {
+      expect(cleanGaps('')).toBe('');
+    });
+
+    it('should return a string with single spaces as-is if passed one', () => {
+      expect(cleanGaps('The quick brown fox')).toBe('The quick brown fox');
+    });
+
+    it('should trim the edges of the string', () => {
+      expect(cleanGaps(' The quick brown fox  ')).toBe('The quick brown fox');
+    });
+
+    it('should make any multi-space blocks single', () => {
+      expect(cleanGaps('The   quick      brown  fox ')).toBe(
+        'The quick brown fox'
+      );
+    });
+
+    it('should be able to clean newlines', () => {
+      expect(cleanGaps('The quick \n brown fox')).toBe('The quick brown fox');
     });
   });
 });

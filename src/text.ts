@@ -12,3 +12,7 @@ export function cleanDiacritics(text: string): string {
   const $ = cheerio.load(`<textarea>${text || ''}</textarea>`);
   return diacritic.clean($('textarea').text());
 }
+
+export function cleanGaps(text: string): string {
+  return (text || '').trim().replace(/\s\s+/g, ' ');
+}
