@@ -72,5 +72,9 @@ describe('number', () => {
     it('should return an integer string if passed an integer', () => {
       expect(integersOnly(28)).toBe('28');
     });
+
+    it('should play nice with integers that are part of another word', () => {
+      expect(integersOnly('36(No document attached)')).toBe('36');
+    });
   });
 });
