@@ -3,7 +3,9 @@ export {
   csvFileToJsonArray,
   filesAsJson,
   filesExist,
+  jsonArrayToCsvBuffer,
   jsonArrayToCsvFile,
+  jsonArrayToCsvStream,
 } from './file';
 export { ArrayFileStore, ObjectFileStore } from './fileStore';
 export { fullName, emailReadyFullName, IName } from './properNoun';

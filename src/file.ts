@@ -2,6 +2,7 @@ import fs from 'fs-extra';
 import { parse } from 'fast-csv';
 import path from 'path';
 import { csvRowsToObjects, objectsToCsvRows, safeJsonParse } from 'deep-cuts';
+import { Readable } from 'stream';
 
 export function cleanFilename(
   filename: string | number | Date,
@@ -80,11 +81,10 @@ export async function filesAsJson(
   }
 }
 
-export async function jsonArrayToCsvFile(
-  filepath: string,
+function csvStringFromJsonArray(
   ar: Array<object>,
   headerOrdering: Array<string> = []
-): Promise<string> {
+): string {
   const headingToIndex: Record<string, number> = headerOrdering.reduce(
     (acc: Record<string, number>, heading: string, idx: number) => {
       acc[heading] = idx;
@@ -122,10 +122,35 @@ export async function jsonArrayToCsvFile(
       return sorted.map((val: string) => `"${val}"`).join(',');
     })
     .join('\n');
+  return rows;
+}
+
+export async function jsonArrayToCsvFile(
+  filepath: string,
+  ar: Array<object>,
+  headerOrdering: Array<string> = []
+): Promise<string> {
+  const rows = csvStringFromJsonArray(ar, headerOrdering);
 
   await fs.writeFile(filepath, rows);
 
   return rows;
+}
+
+export function jsonArrayToCsvBuffer(
+  ar: Array<object>,
+  headerOrdering: Array<string> = []
+): Buffer {
+  const rows = csvStringFromJsonArray(ar, headerOrdering);
+  return Buffer.from(rows, 'utf-8');
+}
+
+export function jsonArrayToCsvStream(
+  ar: Array<object>,
+  headerOrdering: Array<string> = []
+): Readable {
+  const rows = csvStringFromJsonArray(ar, headerOrdering);
+  return Readable.from(rows);
 }
 
 export async function csvFileToJsonArray(
