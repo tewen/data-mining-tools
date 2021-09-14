@@ -64,3 +64,29 @@ Name | Type | Default |
 `headerOrdering` | Array‹string› | [] |
 
 **Returns:** *Promise‹string›*
+
+###  jsonArrayToCsvBuffer
+
+▸ **jsonArrayToCsvBuffer**(`ar`: Array‹object›, `headerOrdering`: Array‹string›): *Buffer*
+
+**Parameters:**
+
+Name | Type | Default |
+------ | ------ | ------ |
+`ar` | Array‹object› | - |
+`headerOrdering` | Array‹string› | [] |
+
+**Returns:** *Buffer*
+
+###  jsonArrayToCsvStream
+
+▸ **jsonArrayToCsvStream**(`ar`: Array‹object›, `headerOrdering`: Array‹string›): *Promise‹string›*
+
+**Parameters:**
+
+Name | Type | Default |
+------ | ------ | ------ |
+`ar` | Array‹object› | - |
+`headerOrdering` | Array‹string› | [] |
+
+**Returns:** *Readable*

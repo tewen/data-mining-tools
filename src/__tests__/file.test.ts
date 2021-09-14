@@ -16,8 +16,11 @@ import {
   TEMP_FILES_DIRECTORY,
 } from './specHelpers';
 import { timeout } from '../';
+import { jsonArrayToCsvBuffer, jsonArrayToCsvStream } from '../file';
 
 describe('file', () => {
+  jest.setTimeout(30 * 1000);
+
   describe('cleanFilename()', () => {
     it('should return a blank string when passed undefined', () => {
       // @ts-ignore
@@ -467,6 +470,83 @@ describe('file', () => {
       expect(contents[2]).toEqual('"SouthEast","Blue","Raspberry"');
       expect(contents[3]).toEqual('"NorthWest","Green","Apple"');
       await cleanupFiles(filepath);
+    });
+  });
+
+  describe('jsonArrayToCsvBuffer()', () => {
+    it('should be able to write correctly to a file', async () => {
+      const rows = [
+        {
+          color: 'Red',
+          flavor: {
+            name: 'Cherry',
+            region: 'NorthEast',
+          },
+        },
+        {
+          color: 'Blue',
+          flavor: {
+            name: 'Raspberry',
+            region: 'SouthEast',
+          },
+        },
+        {
+          color: 'Green',
+          flavor: {
+            name: 'Apple',
+            region: 'NorthWest',
+          },
+        },
+      ];
+      const headerOrdering = ['flavor.region', 'color', 'flavor.name'];
+      const filepath = path.join(TEMP_FILES_DIRECTORY, '1.csv');
+      const bufferFilepath = path.join(TEMP_FILES_DIRECTORY, '1-buffer.csv');
+      await jsonArrayToCsvFile(filepath, rows, headerOrdering);
+      const buffer = jsonArrayToCsvBuffer(rows, headerOrdering);
+      await fs.writeFile(bufferFilepath, buffer);
+      const fileContents = await fs.readFile(filepath, 'utf-8');
+      const bufferFileContents = await fs.readFile(bufferFilepath, 'utf-8');
+      expect(fileContents).toEqual(bufferFileContents);
+      await cleanupFiles(filepath, bufferFilepath);
+    });
+  });
+
+  describe('jsonArrayToCsvStream()', () => {
+    it('should be able to pipe into a file write stream', async () => {
+      const rows = [
+        {
+          color: 'Red',
+          fresh: true,
+          flavor: 'Cherry',
+        },
+        {
+          color: 'Blue',
+          flavor: 'Raspberry',
+        },
+        {
+          color: 'Green',
+          flavor: 'Apple',
+        },
+      ];
+      const filepath = path.join(TEMP_FILES_DIRECTORY, '1.csv');
+      const streamFilepath = path.join(TEMP_FILES_DIRECTORY, '1-stream.csv');
+      await jsonArrayToCsvFile(filepath, rows);
+      const stream = jsonArrayToCsvStream(rows);
+
+      const promise = new Promise(resolve => {
+        const writeStream = fs.createWriteStream(streamFilepath);
+
+        writeStream.on('finish', () => {
+          const fileContents = fs.readFileSync(filepath, 'utf-8');
+          const streamFileContents = fs.readFileSync(streamFilepath, 'utf-8');
+          expect(fileContents).toEqual(streamFileContents);
+          resolve(null);
+        });
+
+        stream.pipe(writeStream);
+      });
+
+      return promise.then(() => cleanupFiles(filepath, streamFilepath));
     });
   });
 
