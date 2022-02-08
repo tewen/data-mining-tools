@@ -4,6 +4,10 @@ import path from 'path';
 import { csvRowsToObjects, objectsToCsvRows, safeJsonParse } from 'deep-cuts';
 import { Readable } from 'stream';
 
+function escapeDoubleQuotes(str: string): string {
+  return ((str && String(str)) || '').replace(/"/g, '""');
+}
+
 export function cleanFilename(
   filename: string | number | Date,
   slashReplacement: string = '_'
@@ -119,7 +123,9 @@ function csvStringFromJsonArray(
         }
         return row;
       })();
-      return sorted.map((val: string) => `"${val}"`).join(',');
+      return sorted
+        .map((val: string) => `"${escapeDoubleQuotes(val)}"`)
+        .join(',');
     })
     .join('\n');
   return rows;
