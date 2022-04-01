@@ -1,6 +1,6 @@
 {
   "name": "data-mining-tools",
-  "version": "1.3.1",
+  "version": "2.0.0",
   "description": "Data mining helpers and utilities for Node JS.",
   "author": "Trevor Ewen",
   "license": "MIT",
