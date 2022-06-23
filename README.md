@@ -5,10 +5,8 @@ Data mining helpers and utilities for Node JS.
 ### Getting Started
 
 ```Bash
-npm install --save data-mining-tools axios puppeteer
+npm install --save data-mining-tools axios
 ```
-
-Puppeteer is a peer dependency, since we recommend you choose your own version.
 
 ### Library
 
@@ -23,8 +21,7 @@ It may make more sense to break it into separate modules in the future, but we l
 #### Functional
 * [file](docs/FILE.md)
 * [number](docs/NUMBER.md)
-* [properNoun](docs/PROPER_NOUN.md)  
-* [render](docs/RENDER.md)
+* [properNoun](docs/PROPER_NOUN.md)
 * [text](docs/TEXT.md)
 * [time](docs/TIME.md)
 * [url](docs/URL.md)
