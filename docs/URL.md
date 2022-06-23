@@ -51,22 +51,7 @@ ___
 
 Name | Type | Default |
 ------ | ------ | ------ |
-`parkingPageCheck` | boolean | true |
 `timeout` | number | 10000 |
-
-**Returns:** *Promise‹boolean›*
-
-___
-
-###  isParkingPage
-
-▸ **isParkingPage**(`url`: string): *Promise‹boolean›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`url` | string |
 
 **Returns:** *Promise‹boolean›*
 

@@ -1,11 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
-import {
-  cleanUrl,
-  domainAndSuffixFromUrl,
-  isLiveUrl,
-  renderDynamicPage,
-} from '../';
+import { cleanUrl, domainAndSuffixFromUrl, isLiveUrl } from '../';
 
 describe('url', () => {
   describe('domainAndSuffixFromUrl()', () => {
@@ -200,7 +195,7 @@ describe('url', () => {
               `${domainAndSuffixFromUrl(first).split('.')[0]}.html`
             );
             await fs.mkdirp(directorypath);
-            const rendered: string = await renderDynamicPage(first);
+            const rendered: string = 'BROKEN';
             await fs.writeFile(filepath, rendered);
             throw new Error(
               `${first} did not return the expectation ${expectation}. Wrote html to ${filepath}.`
